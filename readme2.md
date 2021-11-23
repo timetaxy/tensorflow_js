@@ -20,17 +20,27 @@ var selling =[10,20,30]
 var factor = tf.tensor(degree)
 var result = tf.tensor(selling)
 
+# 원인 input shape
+# 결과 y layer dense units
 var X = tf.input({shape:[1]})
-var Y = tf.layer.dense({units:}).apply(X)
+var Y = tf.layer.dense({units:1}).apply(X)
 var model = tf.model({inputs:X,outputs:Y})
 var compilePParam = {optimizer:tf.train.adam(), loss:tf.losses.meanSquaredError}
+# loss function, MSE : 분산 구하기와 유사
 model.compile(compileParam)
 
 var fitParam = {epochs:100}
-<!-- epoch 학습횟수 -->
+# epoch 학습횟수
 model.fit(factor, result,fitParam).then(function(result){
     var nextTempa = [2,3,4]
     var nextFactor = tf.tensor2d(nextTempa,[nextTempa.length,1])
     var nextResult = model.predict(nextFactor)
     nextResult.print()
 })
+
+---
+https://www.tensorflow.org/js/tutorials/setup
+
+npm install @tensorflow/tfjs
+
+https://github.com/egoing/tensorflow.js-1
