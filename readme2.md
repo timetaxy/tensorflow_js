@@ -44,3 +44,23 @@ https://www.tensorflow.org/js/tutorials/setup
 npm install @tensorflow/tfjs
 
 https://github.com/egoing/tensorflow.js-1
+
+// epoch 더이상 줄어들지 않을 때까지 학습
+
+y=a*x+b
+a가중치, b편향
+weight, bias
+
+model.predict(tf.tensor([20])).arraySync()[0][0]
+weights=model.getWeights()
+//tensor를 일반 값으로 .arraySync()
+weight = weights[0].arraySync()[0][0]
+bias = weights[1].arraySync()[0]
+//weight*20+bias 현재 모델에서는
+//모델 만들기는 많은 연산, 사용은 사칙연산 1회
+
+--- 모델 저장
+https://www.tensorflow.org/js/guide/save_load
+
+mode.save('downloads://model1');
+model.save('localstorage://my-model'); //브라우저 스토리지 저장됨
