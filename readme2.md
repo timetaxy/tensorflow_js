@@ -64,3 +64,5 @@ https://www.tensorflow.org/js/guide/save_load
 
 mode.save('downloads://model1');
 model.save('localstorage://my-model'); //브라우저 스토리지 저장됨
+
+---
