@@ -65,4 +65,9 @@ https://www.tensorflow.org/js/guide/save_load
 mode.save('downloads://model1');
 model.save('localstorage://my-model'); //브라우저 스토리지 저장됨
 
----
+---10_3
+chrome 콘솔에서 실시간 실행시
+fit 부분만 콘솔에서 실행 후 rmse 최소화
+
+# 모델보기
+var weights=model.getWeights();
