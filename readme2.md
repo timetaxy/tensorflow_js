@@ -59,15 +59,33 @@ bias = weights[1].arraySync()[0]
 //weight*20+bias 현재 모델에서는
 //모델 만들기는 많은 연산, 사용은 사칙연산 1회
 
+-- 모델 속성
+pratice5_2
+
 --- 모델 저장
 https://www.tensorflow.org/js/guide/save_load
 
 mode.save('downloads://model1');
 model.save('localstorage://my-model'); //브라우저 스토리지 저장됨
 
+--- 레몬에이드 예제
+pratice5_3
+
+--- 로드 및 모델 사용
+pratice8
+
 ---10_3
 chrome 콘솔에서 실시간 실행시
 fit 부분만 콘솔에서 실행 후 rmse 최소화
 
+--10_4 복수 결과
 # 모델보기
 var weights=model.getWeights();
+//배열 0은 w, 1은 b
+weights[0].arraySync()
+weights[1].arraySync()
+// 결과가 2개 입력되었다면, w 는 각 원소 2개씩 배열이 생성되어 있음
+
+-- 학습 시각화
+pratice11
+https://github.com/tensorflow/tfjs-vis
