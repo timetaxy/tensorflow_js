@@ -89,3 +89,30 @@ weights[1].arraySync()
 -- 학습 시각화
 pratice11
 https://github.com/tensorflow/tfjs-vis
+https://js.tensorflow.org/api_vis/1.5.1/
+
+인자 요약보기
+tfvis.show.modelSummary({name:'nm',tab:'model},model);
+
+실시간 학습곡선
+tfvis.show.history({name:'loss',tab:'history'},[{loss:10},{loss:5},{loss:1}],['loss'])
+
+       var _history = [];
+        var fitParam = { 
+          epochs: 100, 
+          callbacks:{
+            onEpochEnd:
+              function(epoch, logs){
+                console.log('epoch', epoch, logs, 'RMSE=>', Math.sqrt(logs.loss));
+                _history.push(logs);
+                tfvis.show.history({name:'loss', tab:'역사'}, _history, ['loss']);
+              }
+          }
+        } 
+
+---
+인공신경망 ann
+pratice12_2
+node, layer, input layer - hidden layer - output layer
+
+
