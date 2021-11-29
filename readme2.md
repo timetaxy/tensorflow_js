@@ -111,8 +111,30 @@ tfvis.show.history({name:'loss',tab:'history'},[{loss:10},{loss:5},{loss:1}],['l
         } 
 
 ---
-인공신경망 ann
+인공신경망 ann (러닝+hidden layer)
 pratice12_2
 node, layer, input layer - hidden layer - output layer
+
+hidden layer 추가
+
+var X = tf.input({ shape: [13] });
+        var H1 = tf.layers.dense({ units: 13, activation:'relu' }).apply(X);
+        var H2 = tf.layers.dense({ units: 13, activation:'relu' }).apply(H1);
+        var Y = tf.layers.dense({ units: 1 }).apply(H2);
+
+hidden layer에는 activation function 필요. (없으면 퍼셉트론이 아님)
+기본적으로 relu 추천 - rectified linear unit
+https://js.tensorflow.org/api/3.12.0/
+---
+현재 한 것은 회귀 지도학습 추가 학습 todo
+    범주형 classification
+    멀티미디어 자료를 수치화 > 머신러닝
+    자료 전처리 -형태 누락건
+    충분한 데이터 확보, big data 처리
+    시각적 흐름 학습 orange3
+        opentutorials.org/module/4967
+        https://www.youtube.com/playlist?list=PLuHgQVnccGMAwnfp3Ml-XY1WNx1MPgrQ4
+
+q. 데이터 대신 callback 가능한가? 현실 oracle 문제
 
 
